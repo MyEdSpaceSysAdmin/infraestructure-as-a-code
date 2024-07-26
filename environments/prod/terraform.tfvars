@@ -1,1 +1,1 @@
-project="PROJECT_ID"
+project="my-edspace-uat"
