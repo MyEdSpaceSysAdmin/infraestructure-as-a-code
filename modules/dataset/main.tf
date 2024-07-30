@@ -1,7 +1,7 @@
 resource "google_bigquery_dataset" "terraform-test" {
   dataset_id                  = "terraform-test"
   project                     = "${var.project}"
-  location                    = var.region
+  location                    = var.default_region
   friendly_name               = "terraform-test"
   description                 = "dataset to test de terraform deployment"
   access {
