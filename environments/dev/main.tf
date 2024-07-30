@@ -45,8 +45,4 @@ module "dataset" {
   env     = "${local.env}"
 }
 
-module "bucket" {
-  source  = "../../modules/bucket"
-  project = "${var.project}"
-  env     = "${local.env}"
-}
+
