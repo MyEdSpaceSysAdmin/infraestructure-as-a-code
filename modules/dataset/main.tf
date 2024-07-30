@@ -1,4 +1,4 @@
-resource "google_bigquery_dataset" "terraform-test" {
+resource "google_bigquery_dataset" "terraform_test" {
   dataset_id                  = "terraform-test"
   project                     = "${var.project}"
   location                    = var.default_region
