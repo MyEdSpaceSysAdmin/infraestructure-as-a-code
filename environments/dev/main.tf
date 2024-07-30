@@ -27,12 +27,6 @@ module "vpc" {
   env     = "${local.env}"
 }
 
-module "http_server" {
-  source  = "../../modules/http_server"
-  project = "${var.project}"
-  subnet  = "${module.vpc.subnet}"
-}
-
 module "firewall" {
   source  = "../../modules/firewall"
   project = "${var.project}"
@@ -45,4 +39,9 @@ module "dataset" {
   env     = "${local.env}"
 }
 
+module "storage" {
+  source  = "../../modules/storage"
+  project = "${var.project}"
+  env     = "${local.env}"
+}
 
