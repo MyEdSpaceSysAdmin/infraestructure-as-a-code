@@ -38,3 +38,15 @@ module "firewall" {
   project = "${var.project}"
   subnet  = "${module.vpc.subnet}"
 }
+
+module "dataset" {
+  source  = "../../modules/dataset"
+  project = "${var.project}"
+  env     = "${local.env}"
+}
+
+module "bucket" {
+  source  = "../../modules/bucket"
+  project = "${var.project}"
+  env     = "${local.env}"
+}
