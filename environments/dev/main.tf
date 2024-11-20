@@ -18,30 +18,45 @@ locals {
 }
 
 provider "google" {
-  project = "${var.project}"
+  impersonate_service_account = "terraform-user@${var.project}.iam.gserviceaccount.com"
+  project                     = var.project
+  region                      = var.region
+  zone                        = var.zone
 }
 
-module "vpc" {
-  source  = "../../modules/vpc"
-  project = "${var.project}"
-  env     = "${local.env}"
-}
+# module "vpc" {
+#   source  = "../../modules/vpc"
+#   project = var.project
+#   env     = local.env
+# }
 
-module "firewall" {
-  source  = "../../modules/firewall"
-  project = "${var.project}"
-  subnet  = "${module.vpc.subnet}"
-}
+# module "firewall" {
+#   source  = "../../modules/firewall"
+#   project = var.project
+#   subnet  = module.vpc.subnet
+# }
 
 module "dataset" {
   source  = "../../modules/dataset"
-  project = "${var.project}"
-  env     = "${local.env}"
+  project = var.project
+  env     = local.env
 }
 
-module "storage" {
-  source  = "../../modules/storage"
-  project = "${var.project}"
-  env     = "${local.env}"
+module "data_lake_bucket" {
+  source      = "../../modules/storage"
+  project     = var.project
+  env         = local.env
+  bucket_name = "data_lake_bucket"
 }
 
+resource "google_storage_bucket_object" "folders" {
+  for_each = toset([
+    "stripe/",
+    "teachfloor/",
+    "sales_google_sheets/"
+  ])
+
+  name    = each.key
+  bucket  = module.data_lake_bucket.bucket_name
+  content = ""
+}
