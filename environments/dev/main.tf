@@ -46,7 +46,7 @@ module "data_lake_bucket" {
   source      = "../../modules/storage"
   project     = var.project
   env         = local.env
-  bucket_name = "data_lake_bucket"
+  bucket_name = "data-lake-bucket"
 }
 
 resource "google_storage_bucket_object" "folders" {
@@ -59,4 +59,11 @@ resource "google_storage_bucket_object" "folders" {
   name    = each.key
   bucket  = module.data_lake_bucket.bucket_name
   content = ""
+}
+
+module "cloud_composer_dag_source_code_bucket" {
+  source      = "../../modules/storage"
+  project     = var.project
+  env         = local.env
+  bucket_name = "cloud-composer-dag-source-code-bucket"
 }
