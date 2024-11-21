@@ -14,5 +14,5 @@ variable "default_region" {
 variable "bucket_name" {
   description = "The name of the bucket you want to instantiate"
   type = string
-  default = "data_lake_bucket"
+  default = "data-lake-bucket"
 }
