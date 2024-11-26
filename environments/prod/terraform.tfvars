@@ -1,1 +1,5 @@
-project="my-edspace-uat"
+project        = "myedspace-prod"
+project_number = "805455627887"
+env            = "prod"
+region         = "europe-west1"
+zone           = "europe-west1-b"
