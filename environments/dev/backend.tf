@@ -15,7 +15,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "my-edspace-uat-tfstate"
+    bucket = "myedspace-dev-tfstate"
     prefix = "env/dev"
   }
 }
