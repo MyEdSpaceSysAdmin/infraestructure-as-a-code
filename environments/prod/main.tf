@@ -17,18 +17,38 @@ locals {
   env = "prod"
 }
 
-provider "google" {
-  project = "${var.project}"
-}
-
 module "vpc" {
   source  = "../../modules/vpc"
-  project = "${var.project}"
-  env     = "${local.env}"
+  project = var.project
+  env     = local.env
 }
 
 module "firewall" {
   source  = "../../modules/firewall"
-  project = "${var.project}"
-  subnet  = "${module.vpc.subnet}"
+  project = var.project
+  subnet  = module.vpc.subnet
+}
+
+provider "google" {
+  impersonate_service_account = "terraform-user@${var.project}.iam.gserviceaccount.com"
+  project                     = var.project
+  region                      = var.region
+  zone                        = var.zone
+}
+
+# Commented out because of limitations not allowing to enable this specific API/service programmatically: https://github.com/hashicorp/terraform-provider-google/issues/14174
+# resource "google_project_service" "service_usage_api" {
+#   project = var.project
+#   service = "serviceusage.googleapis.com"
+
+#   disable_dependent_services = false
+#   disable_on_destroy = false
+# }
+
+resource "google_project_service" "cloud_composer_api" {
+  project = var.project
+  service = "composer.googleapis.com"
+
+  disable_on_destroy         = false
+  disable_dependent_services = false
 }

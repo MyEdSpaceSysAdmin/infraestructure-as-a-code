@@ -18,30 +18,26 @@ locals {
 }
 
 provider "google" {
-  project = "${var.project}"
+  impersonate_service_account = "terraform-user@${var.project}.iam.gserviceaccount.com"
+  project                     = var.project
+  region                      = var.region
+  zone                        = var.zone
 }
 
-module "vpc" {
-  source  = "../../modules/vpc"
-  project = "${var.project}"
-  env     = "${local.env}"
-}
+# Commented out because of limitations not allowing to enable this specific API/service programmatically: https://github.com/hashicorp/terraform-provider-google/issues/14174
+# resource "google_project_service" "service_usage_api" {
+#   project = var.project
+#   service = "serviceusage.googleapis.com"
 
-module "firewall" {
-  source  = "../../modules/firewall"
-  project = "${var.project}"
-  subnet  = "${module.vpc.subnet}"
-}
+#   disable_dependent_services = false
+#   disable_on_destroy = false
+# }
 
-module "dataset" {
-  source  = "../../modules/dataset"
-  project = "${var.project}"
-  env     = "${local.env}"
-}
+resource "google_project_service" "cloud_composer_api" {
+  project = var.project
+  service = "composer.googleapis.com"
 
-module "storage" {
-  source  = "../../modules/storage"
-  project = "${var.project}"
-  env     = "${local.env}"
+  disable_on_destroy         = false
+  disable_dependent_services = false
 }
 

@@ -13,4 +13,25 @@
 # limitations under the License.
 
 
-variable "project" {}
+variable "project" {
+  type = string
+}
+
+variable "project_number" {
+  type        = string
+  description = "Run `gcloud projects describe <project_id>` to get value"
+}
+
+variable "env" {
+  type    = string
+  default = "dev"
+}
+variable "region" {
+  type    = string
+  default = "europe-west1"
+}
+
+variable "zone" {
+  type    = string
+  default = "europe-west1-b"
+}
