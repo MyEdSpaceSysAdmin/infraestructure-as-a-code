@@ -1,9 +1,10 @@
 
 module "data_lake_bucket" {
-  source      = "../../modules/storage"
-  project     = var.project
-  env         = local.env
-  bucket_name = "${var.project}-data-lake-bucket"
+  source         = "../../modules/storage"
+  project        = var.project
+  env            = local.env
+  bucket_name    = "${var.project}-data-lake-bucket"
+  default_region = var.region
 }
 
 resource "google_storage_bucket_object" "data_lake_data_source_folders" {
