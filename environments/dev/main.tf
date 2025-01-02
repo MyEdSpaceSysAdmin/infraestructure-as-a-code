@@ -24,15 +24,6 @@ provider "google" {
   zone                        = var.zone
 }
 
-# Commented out because of limitations not allowing to enable this specific API/service programmatically: https://github.com/hashicorp/terraform-provider-google/issues/14174
-# resource "google_project_service" "service_usage_api" {
-#   project = var.project
-#   service = "serviceusage.googleapis.com"
-
-#   disable_dependent_services = false
-#   disable_on_destroy = false
-# }
-
 resource "google_project_service" "cloud_composer_api" {
   project = var.project
   service = "composer.googleapis.com"
