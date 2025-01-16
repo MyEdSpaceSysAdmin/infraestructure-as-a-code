@@ -1,0 +1,62 @@
+[
+    {
+        "name": "id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "courses_id",
+        "type": "STRING",
+        "mode": "REPEATED"
+    },
+    {
+        "name": "exit_url",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "notifications_clicked",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "total_number_courses",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_selected",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_courses",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "user_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "referring_url",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "duration",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "profile_clicked",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "total_courses_lib_visits",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    }
+]

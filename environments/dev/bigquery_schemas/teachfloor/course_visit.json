@@ -1,0 +1,162 @@
+[
+    {
+        "name": "id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "user_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_category",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_teacher",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_year_group",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "module_clicked",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "module_clicked_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "duration",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "module_element_clicked",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "module_element_clicked_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "curriculum_clicked",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "progress_clicked",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_modules_done",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_workbooks_done",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_livestreams_done",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_homework_done",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_video_solutions_done",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_modules",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_workbooks",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_homework",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "completed_course",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_livestreams",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "completed_courses",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "event_course_progress",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "user_course_progress",
+        "type": "STRING",
+        "mode": "REPEATED"
+    },
+    {
+        "name": "user_quiz_avg_score",
+        "type": "STRING",
+        "mode": "REPEATED"
+    },
+    {
+        "name": "ratio_of_homework_complete",
+        "type": "STRING",
+        "mode": "REPEATED"
+    },
+    {
+        "name": "last_course_visited",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "total_course_hours",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "event_quiz_avg_score",
+        "type": "FLOAT",
+        "mode": "NULLABLE"
+    }
+]
