@@ -1,0 +1,57 @@
+[
+    {
+        "name": "id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "user_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "quiz_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "module_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "element_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "element_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_category",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_teacher",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_year_group",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    }
+]

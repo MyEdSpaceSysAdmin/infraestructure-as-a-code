@@ -1,0 +1,232 @@
+[
+    {
+        "name": "anonymous_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_course_availability",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_course_created_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_course_currency",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_course_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_course_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_course_object",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_course_visibility",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_element_created_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_element_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_element_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_element_object",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_element_position",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_element_type",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_ip",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_library_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_library_version",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_locale",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_module_created_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_module_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_module_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_module_object",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_module_position",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_module_type",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_page_path",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_page_referrer",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_page_title",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_page_url",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_timezone",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_user_agent",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_user_agent_data_brands",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_user_agent_data_mobile",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_user_agent_data_platform",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "element",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "event",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "event_text",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "loaded_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "original_timestamp",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "path",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "received_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "sent_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "timestamp",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "user_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "uuid_ts",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "viewport",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    }
+]

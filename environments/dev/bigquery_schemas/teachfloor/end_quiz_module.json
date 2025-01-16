@@ -1,0 +1,87 @@
+[
+    {
+        "name": "id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "module_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "user_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "quiz_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "element_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_questions",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "quiz_n_right",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "quiz_n_wrong",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_category",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_teacher",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_year_group",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "total_number_right_q",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "total_number_wrong_q",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "quiz_score",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "total_quizzes_completed",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    }
+]

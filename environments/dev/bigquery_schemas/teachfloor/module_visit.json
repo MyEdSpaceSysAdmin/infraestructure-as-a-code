@@ -1,0 +1,77 @@
+[
+    {
+        "name": "id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "user_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_category",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_teacher",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "course_year_group",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "module_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "module_date",
+        "type": "DATE",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "module_status",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "module_element_clicked",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "module_element_clicked_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_elements",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_elements_done",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "number_of_module_visits",
+        "type": "INTEGER",
+        "mode": "NULLABLE"
+    }
+]

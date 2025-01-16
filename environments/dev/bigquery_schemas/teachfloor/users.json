@@ -1,0 +1,97 @@
+[
+    {
+        "name": "context_ip",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_library_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_library_version",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_locale",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_page_path",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_page_referrer",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_page_title",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_page_url",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_timezone",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_user_agent",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_user_agent_data_brands",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_user_agent_data_mobile",
+        "type": "BOOLEAN",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "context_user_agent_data_platform",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "email",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "loaded_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "received_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "uuid_ts",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
+    }
+]
