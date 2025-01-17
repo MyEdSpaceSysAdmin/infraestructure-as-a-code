@@ -17,6 +17,15 @@ locals {
   env = "dev"
 }
 
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "6.16.0"
+    }
+  }
+}
+
 provider "google" {
   impersonate_service_account = "terraform-user@${var.project}.iam.gserviceaccount.com"
   project                     = var.project
