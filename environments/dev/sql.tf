@@ -8,7 +8,7 @@ resource "google_sql_database_instance" "bitrix_get_data_mysql_instance" {
   master_instance_name = null
   name                 = "bitrix-get-data"
   project              = "sincere-hybrid-364510"
-  region               = "europe-west1"
+  region               = "europe-west1" # TODO: Update to europe-west2 when migrating to UAT and PROD
   replica_names        = []
   lifecycle {
     # [GAB] Currently these values are set to 0 and 0 respectively
