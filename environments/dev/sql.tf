@@ -21,7 +21,7 @@ resource "google_sql_database_instance" "bitrix_get_data_mysql_instance" {
       settings[0].insights_config[0].query_string_length,
     ]
   }
-  
+
   settings {
     activation_policy            = "ALWAYS"
     availability_type            = "ZONAL"

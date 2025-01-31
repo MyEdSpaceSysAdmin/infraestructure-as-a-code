@@ -398,3 +398,37 @@ resource "google_bigquery_table" "users" {
 
   schema = file("${path.module}/bigquery_schemas/teachfloor/users.json")
 }
+
+resource "google_bigquery_table" "quiz_submitted" {
+  dataset_id          = module.teachfloor_dataset.dataset_id
+  table_id            = "quiz_submitted"
+  deletion_protection = false
+  time_partitioning {
+    type = "DAY"
+  }
+
+  lifecycle {
+    ignore_changes = [
+      schema
+    ]
+  }
+
+  schema = file("${path.module}/bigquery_schemas/teachfloor/quiz_submitted.json")
+}
+
+resource "google_bigquery_table" "module_completed" {
+  dataset_id          = module.teachfloor_dataset.dataset_id
+  table_id            = "module_completed"
+  deletion_protection = false
+  time_partitioning {
+    type = "DAY"
+  }
+
+  lifecycle {
+    ignore_changes = [
+      schema
+    ]
+  }
+
+  schema = file("${path.module}/bigquery_schemas/teachfloor/module_completed.json")
+}

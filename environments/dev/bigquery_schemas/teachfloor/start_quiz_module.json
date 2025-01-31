@@ -53,5 +53,10 @@
         "name": "course_year_group",
         "type": "STRING",
         "mode": "NULLABLE"
+    },
+    {
+        "name": "loaded_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
     }
 ]

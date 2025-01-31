@@ -83,5 +83,10 @@
         "name": "total_quizzes_completed",
         "type": "INTEGER",
         "mode": "NULLABLE"
+    },
+    {
+        "name": "loaded_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
     }
 ]

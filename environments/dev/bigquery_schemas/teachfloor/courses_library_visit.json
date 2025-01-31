@@ -58,5 +58,10 @@
         "name": "total_courses_lib_visits",
         "type": "INTEGER",
         "mode": "NULLABLE"
+    },
+    {
+        "name": "loaded_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
     }
 ]
