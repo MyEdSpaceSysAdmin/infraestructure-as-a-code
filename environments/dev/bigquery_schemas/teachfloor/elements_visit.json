@@ -98,5 +98,10 @@
         "name": "timetable_clicked",
         "type": "BOOLEAN",
         "mode": "NULLABLE"
+    },
+    {
+        "name": "loaded_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
     }
 ]

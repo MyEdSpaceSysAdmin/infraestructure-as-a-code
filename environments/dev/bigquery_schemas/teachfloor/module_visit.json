@@ -73,5 +73,10 @@
         "name": "number_of_module_visits",
         "type": "INTEGER",
         "mode": "NULLABLE"
+    },
+    {
+        "name": "loaded_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
     }
 ]

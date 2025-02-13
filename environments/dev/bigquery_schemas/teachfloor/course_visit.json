@@ -158,5 +158,10 @@
         "name": "event_quiz_avg_score",
         "type": "FLOAT",
         "mode": "NULLABLE"
+    },
+    {
+        "name": "loaded_at",
+        "type": "TIMESTAMP",
+        "mode": "NULLABLE"
     }
 ]

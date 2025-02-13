@@ -10,7 +10,7 @@ resource "google_datastream_connection_profile" "bitrix_chat_mysql_connection" {
   create_without_validation = false
 
   mysql_profile {
-    hostname = "bitrix-read-replica.ctzlfpmjufbh.eu-west-2.rds.amazonaws.com"
+    hostname = "bitrix-jan-21-read-replica.ctzlfpmjufbh.eu-west-2.rds.amazonaws.com"
     port     = 3306
     username = "admin"
     password = data.google_secret_manager_secret_version.bitrix_read_replica_password.secret_data
@@ -19,59 +19,131 @@ resource "google_datastream_connection_profile" "bitrix_chat_mysql_connection" {
 
 # Imported from GCP sincere-hybrid-364510
 resource "google_datastream_connection_profile" "bigquery_sink_connection" {
-  display_name              = "bigquery-sink"
-  connection_profile_id     = "bigquery-sink"
-  location                  = var.region
+  display_name          = "bigquery-sink"
+  connection_profile_id = "bigquery-sink"
+  location              = var.region
 
   bigquery_profile {}
 }
 
 resource "google_datastream_stream" "bitrx_chat_mysql_to_bigquery" {
-    display_name = "eu-west-2-mysql-bitrix-read-replica-sitemanager-db-to-bq"
-    location     = var.region
-    stream_id    = "eu-west-2-mysql-bitrix-read-replica-sitemanager-db-to-bq"
+  display_name = "eu-west-2-mysql-bitrix-jan-21-read-replica-sitemanager-db-to-bq"
+  location     = var.region
+  stream_id    = "eu-west-2-mysql-bitrix-jan-21-read-replica-sitemanager-db-to-bq"
 
-    source_config {
-        source_connection_profile = google_datastream_connection_profile.bitrix_chat_mysql_connection.id
-        mysql_source_config {
-          include_objects {
-            mysql_databases  {
-              database = "sitemanager"
-              mysql_tables {
-                  table = "b_im_message"
-              }
-              mysql_tables {
-                  table = "b_user"
-              }
-              mysql_tables {
-                  table = "b_im_chat"
-              }
-                mysql_tables {
-                  table = "b_imopenlines_session"
-              }
-            }
+  source_config {
+    source_connection_profile = google_datastream_connection_profile.bitrix_chat_mysql_connection.id
+    mysql_source_config {
+      include_objects {
+        mysql_databases {
+          database = "sitemanager"
+          mysql_tables {
+            table = "b_crm_act" 
           }
-          binary_log_position {}
+          mysql_tables {
+            table = "b_crm_act_app_type" 
+          }
+          mysql_tables {
+            table = "b_crm_act_bind" 
+          }
+          mysql_tables {
+            table = "b_crm_act_channel_stat" 
+          }
+          mysql_tables {
+            table = "b_crm_act_comm" 
+          }
+          mysql_tables {
+              table = "b_crm_act_counter_light" 
+          }
+          mysql_tables {
+              table = "b_crm_act_elem" 
+          }
+          mysql_tables {
+              table = "b_crm_act_fastsearch" 
+          }
+          mysql_tables {
+              table = "b_crm_act_incoming_channel" 
+          }
+          mysql_tables {
+              table = "b_crm_act_mail_body" 
+          }
+          mysql_tables {
+              table = "b_crm_act_mail_meta" 
+          }
+          mysql_tables {
+              table = "b_crm_act_ping_offsets" 
+          }
+          mysql_tables {
+              table = "b_crm_act_ping_queue" 
+          }
+          mysql_tables {
+              table = "b_crm_act_sms_placeholder" 
+          }
+          mysql_tables {
+              table = "b_crm_act_stat" 
+          }
+          mysql_tables {
+              table = "b_crm_entity_cfg" 
+          }
+          mysql_tables {
+              table = "b_crm_entity_channel" 
+          }
+          mysql_tables {
+              table = "b_crm_entity_contact" 
+          }
+          mysql_tables {
+              table = "b_crm_entity_countable_act" 
+          }
+          mysql_tables {
+              table = "b_crm_entity_lock" 
+          }
+          mysql_tables {
+              table = "b_crm_entity_perms" 
+          }
+          mysql_tables {
+              table = "b_crm_entity_relation" 
+          }
+          mysql_tables {
+              table = "b_crm_entity_uncompleted_act" 
+          }
+          mysql_tables {
+              table = "b_entity_usage" 
+          }
+          mysql_tables {
+              table = "b_im_chat" 
+          }
+          mysql_tables {
+              table = "b_im_message" 
+          }
+          mysql_tables {
+              table = "b_imopenlines_session" 
+          }
+          mysql_tables {
+              table = "b_user" 
+          }
         }
+      }
+      binary_log_position {}
     }
+  }
 
-    destination_config {
-        destination_connection_profile = google_datastream_connection_profile.bigquery_sink_connection.id
-        bigquery_destination_config {
-            data_freshness = "900s"
-            source_hierarchy_datasets {
-                dataset_template {
-                    location = var.region
-                    dataset_id_prefix = "bitrix_chat_"
-                }
-            }
-            merge {}
+  destination_config {
+    destination_connection_profile = google_datastream_connection_profile.bigquery_sink_connection.id
+    bigquery_destination_config {
+      data_freshness = "900s"
+      source_hierarchy_datasets {
+        dataset_template {
+          location          = var.region
+          dataset_id_prefix = "bitrix_chat_"
         }
+      }
+      merge {}
     }
+  }
 
-    backfill_all {}
-    create_without_validation = false
-    desired_state = "RUNNING"
+  backfill_all {}
+  create_without_validation = false
+  desired_state             = "RUNNING"
 }
 
 data "google_secret_manager_secret_version" "filament_read_replica_password" {
@@ -96,43 +168,43 @@ resource "google_datastream_connection_profile" "filament_mysql_connection" {
 }
 
 resource "google_datastream_stream" "filament_mysql_to_bigquery" {
-    display_name = "${var.env}-eu-west2-mysql-filament-prod-db-to-bq"
-    location     = var.region
-    stream_id    = "${var.env}-eu-west2-mysql-filament-prod-db-to-bq"
+  display_name = "${var.env}-eu-west2-mysql-filament-prod-db-to-bq"
+  location     = var.region
+  stream_id    = "${var.env}-eu-west2-mysql-filament-prod-db-to-bq"
 
-    source_config {
-        source_connection_profile = google_datastream_connection_profile.filament_mysql_connection.id
-        mysql_source_config {
-          include_objects {
-            mysql_databases  {
-              database = "filament_prod"
-            }
-            mysql_databases  {
-              database = "filament_staging"
-            }
-            mysql_databases  {
-              database = "filament_test"
-            }
-            mysql_databases  {
-              database = "vapor"
-            }
-          }
-          binary_log_position {}
+  source_config {
+    source_connection_profile = google_datastream_connection_profile.filament_mysql_connection.id
+    mysql_source_config {
+      include_objects {
+        mysql_databases {
+          database = "filament_prod"
         }
-    }
-
-    destination_config {
-        destination_connection_profile = google_datastream_connection_profile.bigquery_sink_connection.id
-        bigquery_destination_config {
-            data_freshness = "900s"
-            single_target_dataset {
-              dataset_id = "${var.project}:filament"
-            }
-            merge {}
+        mysql_databases {
+          database = "filament_staging"
         }
+        mysql_databases {
+          database = "filament_test"
+        }
+        mysql_databases {
+          database = "vapor"
+        }
+      }
+      binary_log_position {}
     }
+  }
 
-    backfill_all {}
-    create_without_validation = false
-    desired_state = "NOT_STARTED"
+  destination_config {
+    destination_connection_profile = google_datastream_connection_profile.bigquery_sink_connection.id
+    bigquery_destination_config {
+      data_freshness = "900s"
+      single_target_dataset {
+        dataset_id = "${var.project}:filament"
+      }
+      merge {}
+    }
+  }
+
+  backfill_all {}
+  create_without_validation = false
+  desired_state             = "NOT_STARTED"
 }
