@@ -10,7 +10,7 @@ resource "google_datastream_connection_profile" "bitrix_chat_mysql_connection" {
   create_without_validation = false
 
   mysql_profile {
-    hostname = "bitrix-read-replica.ctzlfpmjufbh.eu-west-2.rds.amazonaws.com"
+    hostname = "bitrix-jan-21-read-replica.ctzlfpmjufbh.eu-west-2.rds.amazonaws.com"
     port     = 3306
     username = "admin"
     password = data.google_secret_manager_secret_version.bitrix_read_replica_password.secret_data
@@ -26,18 +26,10 @@ resource "google_datastream_connection_profile" "bigquery_sink_connection" {
   bigquery_profile {}
 }
 
-# TODO: Recreate bitrix-chat connection profile, and datastream to BigQuery
 resource "google_datastream_stream" "bitrx_chat_mysql_to_bigquery" {
-  display_name = "eu-west-2-mysql-bitrix-read-replica-sitemanager-db-to-bq"
+  display_name = "eu-west-2-mysql-bitrix-jan-21-read-replica-sitemanager-db-to-bq"
   location     = var.region
-  stream_id    = "eu-west-2-mysql-bitrix-read-replica-sitemanager-db-to-bq"
-
-    lifecycle {
-    ignore_changes = [
-      source_config,
-      desired_state
-    ]
-  }
+  stream_id    = "eu-west-2-mysql-bitrix-jan-21-read-replica-sitemanager-db-to-bq"
 
   source_config {
     source_connection_profile = google_datastream_connection_profile.bitrix_chat_mysql_connection.id
@@ -45,6 +37,18 @@ resource "google_datastream_stream" "bitrx_chat_mysql_to_bigquery" {
       include_objects {
         mysql_databases {
           database = "sitemanager"
+          mysql_tables {
+            table = "b_crm_act" 
+          }
+          mysql_tables {
+            table = "b_crm_act_app_type" 
+          }
+          mysql_tables {
+            table = "b_crm_act_bind" 
+          }
+          mysql_tables {
+            table = "b_crm_act_channel_stat" 
+          }
           mysql_tables {
             table = "b_crm_act_comm" 
           }

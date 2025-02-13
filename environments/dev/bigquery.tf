@@ -432,3 +432,19 @@ resource "google_bigquery_table" "module_completed" {
 
   schema = file("${path.module}/bigquery_schemas/teachfloor/module_completed.json")
 }
+
+
+module "recommender_system_dataset" {
+  source         = "../../modules/dataset"
+  project        = var.project
+  dataset_name   = "recommender_system"
+  default_region = var.region
+}
+
+
+resource "google_bigquery_table" "products" {
+  dataset_id          = module.recommender_system_dataset.dataset_id
+  table_id            = "products"
+
+  schema = file("${path.module}/bigquery_schemas/recommender_system/products.json")
+}
