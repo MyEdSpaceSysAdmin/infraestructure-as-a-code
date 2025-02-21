@@ -448,3 +448,10 @@ resource "google_bigquery_table" "products" {
 
   schema = file("${path.module}/bigquery_schemas/recommender_system/products.json")
 }
+
+module "historical_masterfile_dataset" {
+  source         = "../../modules/dataset"
+  project        = var.project
+  dataset_name   = "historical_master"
+  default_region = var.region
+}
