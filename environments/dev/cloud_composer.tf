@@ -35,12 +35,13 @@ resource "google_composer_environment" "cloud_composer_environment" {
       image_version = "composer-2.10.1-airflow-2.10.2"
 
       pypi_packages = {
-        google-api-python-client    = "==2.135.0"
-        google-cloud-storage        = "==2.18.2"
-        stripe                      = "==9.9.0"
-        google-cloud-bigquery       = "==3.27.0"
-        google-cloud-secret-manager = "==2.21.1"
-        pandas                      = "==2.2.3"
+        google-api-python-client       = "==2.135.0"
+        google-cloud-storage           = "==2.18.2"
+        stripe                         = "==9.9.0"
+        google-cloud-bigquery          = "==3.27.0"
+        google-cloud-secret-manager    = "==2.21.1"
+        pandas                         = "==2.2.3"
+        apache-airflow-providers-slack = "==9.0.4"
       }
     }
 

@@ -13,6 +13,13 @@ module "google_ads_manager_dataset" {
   default_region = var.region
 }
 
+module "typeform_dataset" {
+  source         = "../../modules/dataset"
+  project        = var.project
+  dataset_name   = "typeform"
+  default_region = var.region
+}
+
 resource "google_project_iam_member" "permissions" {
   project = var.project
   role    = "roles/iam.serviceAccountTokenCreator"
@@ -443,8 +450,8 @@ module "recommender_system_dataset" {
 
 
 resource "google_bigquery_table" "products" {
-  dataset_id          = module.recommender_system_dataset.dataset_id
-  table_id            = "products"
+  dataset_id = module.recommender_system_dataset.dataset_id
+  table_id   = "products"
 
   schema = file("${path.module}/bigquery_schemas/recommender_system/products.json")
 }

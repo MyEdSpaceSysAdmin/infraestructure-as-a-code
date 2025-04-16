@@ -19,7 +19,7 @@ resource "google_project_iam_member" "teachfloor_fastapi_service_account" {
 resource "google_service_account" "teachfloor_fastapi_user_service_account" {
   account_id   = "teachfloor-fastapi-user"
   display_name = "teachfloor_fastapi_user"
-  description = "Service account for accessing the Teachfloor Student Dashboard endpoints from deployed Cloud Run service teachfloor_fastapi"
+  description  = "Service account for accessing the Teachfloor Student Dashboard endpoints from deployed Cloud Run service teachfloor_fastapi"
 }
 
 resource "google_project_iam_member" "teachfloor_fastapi_user_service_account" {
@@ -47,6 +47,13 @@ resource "google_cloud_run_v2_service" "teachfloor_fastapi" {
   location             = var.region
   name                 = "teachfloor-fastapi"
   project              = var.project
+
+  lifecycle {
+    ignore_changes = [
+      client_version
+    ]
+  }
+
   scaling {
     min_instance_count = 1
   }
