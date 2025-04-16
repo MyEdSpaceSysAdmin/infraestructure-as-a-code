@@ -38,88 +38,88 @@ resource "google_datastream_stream" "bitrx_chat_mysql_to_bigquery" {
         mysql_databases {
           database = "sitemanager"
           mysql_tables {
-            table = "b_crm_act" 
+            table = "b_crm_act"
           }
           mysql_tables {
-            table = "b_crm_act_app_type" 
+            table = "b_crm_act_app_type"
           }
           mysql_tables {
-            table = "b_crm_act_bind" 
+            table = "b_crm_act_bind"
           }
           mysql_tables {
-            table = "b_crm_act_channel_stat" 
+            table = "b_crm_act_channel_stat"
           }
           mysql_tables {
-            table = "b_crm_act_comm" 
+            table = "b_crm_act_comm"
           }
           mysql_tables {
-              table = "b_crm_act_counter_light" 
+            table = "b_crm_act_counter_light"
           }
           mysql_tables {
-              table = "b_crm_act_elem" 
+            table = "b_crm_act_elem"
           }
           mysql_tables {
-              table = "b_crm_act_fastsearch" 
+            table = "b_crm_act_fastsearch"
           }
           mysql_tables {
-              table = "b_crm_act_incoming_channel" 
+            table = "b_crm_act_incoming_channel"
           }
           mysql_tables {
-              table = "b_crm_act_mail_body" 
+            table = "b_crm_act_mail_body"
           }
           mysql_tables {
-              table = "b_crm_act_mail_meta" 
+            table = "b_crm_act_mail_meta"
           }
           mysql_tables {
-              table = "b_crm_act_ping_offsets" 
+            table = "b_crm_act_ping_offsets"
           }
           mysql_tables {
-              table = "b_crm_act_ping_queue" 
+            table = "b_crm_act_ping_queue"
           }
           mysql_tables {
-              table = "b_crm_act_sms_placeholder" 
+            table = "b_crm_act_sms_placeholder"
           }
           mysql_tables {
-              table = "b_crm_act_stat" 
+            table = "b_crm_act_stat"
           }
           mysql_tables {
-              table = "b_crm_entity_cfg" 
+            table = "b_crm_entity_cfg"
           }
           mysql_tables {
-              table = "b_crm_entity_channel" 
+            table = "b_crm_entity_channel"
           }
           mysql_tables {
-              table = "b_crm_entity_contact" 
+            table = "b_crm_entity_contact"
           }
           mysql_tables {
-              table = "b_crm_entity_countable_act" 
+            table = "b_crm_entity_countable_act"
           }
           mysql_tables {
-              table = "b_crm_entity_lock" 
+            table = "b_crm_entity_lock"
           }
           mysql_tables {
-              table = "b_crm_entity_perms" 
+            table = "b_crm_entity_perms"
           }
           mysql_tables {
-              table = "b_crm_entity_relation" 
+            table = "b_crm_entity_relation"
           }
           mysql_tables {
-              table = "b_crm_entity_uncompleted_act" 
+            table = "b_crm_entity_uncompleted_act"
           }
           mysql_tables {
-              table = "b_entity_usage" 
+            table = "b_entity_usage"
           }
           mysql_tables {
-              table = "b_im_chat" 
+            table = "b_im_chat"
           }
           mysql_tables {
-              table = "b_im_message" 
+            table = "b_im_message"
           }
           mysql_tables {
-              table = "b_imopenlines_session" 
+            table = "b_imopenlines_session"
           }
           mysql_tables {
-              table = "b_user" 
+            table = "b_user"
           }
         }
       }
@@ -198,7 +198,7 @@ resource "google_datastream_stream" "filament_mysql_to_bigquery" {
     bigquery_destination_config {
       data_freshness = "900s"
       single_target_dataset {
-        dataset_id = "${var.project}:filament"
+        dataset_id = "${var.project}:filament_test"
       }
       merge {}
     }
@@ -206,5 +206,5 @@ resource "google_datastream_stream" "filament_mysql_to_bigquery" {
 
   backfill_all {}
   create_without_validation = false
-  desired_state             = "NOT_STARTED"
+  desired_state             = "PAUSED" # Change to RUNNING when migrating to UAT and PROD
 }

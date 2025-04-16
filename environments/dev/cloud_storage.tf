@@ -11,7 +11,8 @@ resource "google_storage_bucket_object" "data_lake_data_source_folders" {
   for_each = toset([
     "stripe/",
     "teachfloor/",
-    "sales_google_sheets/"
+    "sales_google_sheets/",
+    "tiktok/"
   ])
 
   name    = each.key
