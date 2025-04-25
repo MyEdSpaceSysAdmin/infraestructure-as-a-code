@@ -3,7 +3,8 @@ locals {
     "roles/composer.worker",
     "roles/bigquery.admin",
     "roles/secretmanager.secretAccessor",
-    "roles/storage.admin"
+    "roles/storage.admin",
+    "roles/iam.serviceAccountTokenCreator"
   ]
 }
 
