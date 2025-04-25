@@ -47,3 +47,20 @@ resource "google_cloudbuild_trigger" "teachfloor_fastapi_cloud_build_trigger" {
     }
   }
 }
+
+resource "google_service_account" "dev_cloud_composer_cloud_build_service_account" {
+  account_id   = "dev-cloud-composer-cloud-build"
+  display_name = "dev-cloud-composer-cloud-build"
+  description  = "Service account for the Cloud Build trigger that deploys to the DEV Cloud Composer environment"
+}
+
+resource "google_project_iam_member" "dev_cloud_composer_cloud_build_service_account" {
+  for_each = toset([
+    "roles/storage.objectAdmin",
+    "roles/logging.logWriter"
+  ])
+
+  project = "sincere-hybrid-364510"
+  role    = each.value
+  member  = "serviceAccount:${google_service_account.dev_cloud_composer_cloud_build_service_account.email}"
+}
