@@ -49,10 +49,26 @@ resource "google_cloud_run_v2_service" "teachfloor_fastapi" {
   project              = var.project
 
   lifecycle {
-    ignore_changes = [
-      client_version
-    ]
-  }
+      ignore_changes = [
+        annotations,
+        client,
+        client_version,
+        custom_audiences,
+        deletion_protection,
+        description,
+        ingress,
+        invoker_iam_disabled,
+        labels,
+        launch_stage,
+        location,
+        name,
+        project,
+        scaling,
+        template,
+        traffic
+      ]
+    }
+
 
   scaling {
     min_instance_count = 1
