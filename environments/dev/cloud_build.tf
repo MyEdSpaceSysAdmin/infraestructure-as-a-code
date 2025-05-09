@@ -57,7 +57,8 @@ resource "google_service_account" "dev_cloud_composer_cloud_build_service_accoun
 resource "google_project_iam_member" "dev_cloud_composer_cloud_build_service_account" {
   for_each = toset([
     "roles/storage.objectAdmin",
-    "roles/logging.logWriter"
+    "roles/logging.logWriter",
+    "roles/artifactregistry.writer"
   ])
 
   project = "sincere-hybrid-364510"
