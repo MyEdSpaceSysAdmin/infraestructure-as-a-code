@@ -20,7 +20,7 @@ resource "google_compute_instance" "airbyte-dbt-sandbox" {
     goog-ec-src = "vm_add-tf"
   }
 
-  machine_type = "n2-highcpu-64"
+  machine_type = "e2-standard-32"
   name         = "airbyte-dbt-sandbox"
 
   network_interface {
